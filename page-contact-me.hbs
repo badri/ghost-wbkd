@@ -1,0 +1,39 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+{{> "header"}}
+
+
+<main id="content" class="content" role="main">
+      <!-- foo -->
+    <div id="article" class="box {{#if image}}has-image{{/if}}">
+        {{#if image}}
+        <div class="image-wrapper">
+            <img src="{{image}}" class="post-image"/>
+        </div>
+        {{/if}}
+    
+    <article class="{{post_class}}">
+
+        <header class="post-header">
+            <h1 class="post-title">{{title}}</h1>
+        </header>
+
+        <section class="post-content">
+            {{content}}
+        </section>
+	<iframe src="https://docs.google.com/forms/d/1OtyurEEjqikiMJ8-mVsEB_RB5ycY8jq761bB4AQNWJM/viewform?embedded=true" width="760" height="750" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+    </article>
+
+</div>
+
+<div id="sidebar">{{> "sidebar"}}</div>
+
+</main>
+
+{{/post}}
